@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Web Portfolio: javascript</title>
+			<link type="text/css" rel="stylesheet" href="https://itslaurence.github.io/css/styles.css" media="screen">
+		<link rel="shortcut icon" href="/Users/1050498/Desktop/Eslava_Portfolio/_assets/images/favicon.png">
+<!--Javascript starts here -->
+		<script>
+			function showAlert(){
+				var myText="wow! this is so cool :)";
+			alert(myText);
+			}
+			  function updateTime() { 
+  	// get all parts of the current time
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+
+  // add leading zero's to minutes and seconds
+  if (minutes < 10) { 
+    minutes = '0' + minutes;
+  }
+  if (seconds < 10) { 
+    seconds = '0' + seconds;
+  }				
+
+  // get time of day (am or pm) 
+  if (hours >= 12 && hours < 24) { 
+    var timeOfDay = 'pm';
+  }
+  else { 
+    var timeOfDay = 'am'; 
+  }
+				
+  // convert hours from 24-hour time to 12-hour time
+  if (hours > 12) { 
+    hours = hours - 12;
+  }
+    // splice them together into a character string named "currentTime"
+    var currentTime = hours + ':' + minutes + ':' + seconds + ' ' + timeOfDay;    
+    
+    // get the clock div 
+    var myClock = document.getElementById('clock');
+    
+    // write the currentTime string to the clock div
+    myClock.innerHTML = currentTime;
+  }
+    function toggleClock() { 
+    // get the clock 
+    var myClock = document.getElementById('clock');
+
+    // get the current value of the clock's display property 
+    var displaySetting = myClock.style.display;
+
+    // also get the clock button, so we can change what it says 
+    var clockButton = document.getElementById('clockButton');
+				
+    // now toggle the clock and the button text, depending on current state
+    if (displaySetting == 'block') { 
+      // clock is visible. hide it
+      myClock.style.display = 'none';
+      // change button text
+      clockButton.innerHTML = 'Show clock';
+    }
+    else { 
+      // clock is hidden. show it 
+      myClock.style.display = 'block';
+      // change button text
+      clockButton.innerHTML = 'Hide clock';
+    }
+  }  
+		</script>
+<!--Javascript ends here -->
+  <style>
+    div#clock { 
+      /* your style declarations go here */
+    }
+  </style>
+
+	</head>
+  <body>
+		<body onload="setInterval('updateTime()',1000)">
+
+				<img src="/Users/1050498/Desktop/Eslava_Portfolio/_assets/images/Website Banner.png">
+				<h1>Web Portfoio: Javascript</h1>
+
+		<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="accessibility.html">Accessibility</a></li>
+					<li><a href="usability.html">Usability</a></li>		
+					<li><a href="graphics.html">Graphics</a></li>
+					<li><a href="javascript.html">Javascript</a></li>
+					<li><a href="tools.html">Tools</a></li>
+					<li><a href="video.html">Video</a></li>
+				</ul>
+		</nav>
+
+		<button onclick="showAlert()">Show alert</button>
+		<div id="clock">
+		</div>
+<button onclick="toggleClock()" id="clockButton">Show clock</button>
+
+
+<div class="items">
+   <input id="mylist-electronics" type="checkbox" value= "electronics"></input>
+  <label id="mylist">Electronics</label></th>
+        <th>  <select id="electronics">
+    <option value"">-select-</option>
+    <option value"">phone</option>
+    <option value"">computer</option>
+    <option value"">charger</option>
+    <option value"">earphones</option>
+  </select></th>
+      </td>
+      </tr>
+      </thread>
+    <tbody>
+      <tr>
+        <th scope="row"></th>
+        <td>   <input id="mylist-clothes" type="checkbox" value= "clothes"></input>
+  <label id="mylist">Clothes</label></td>
+        <td>    <select id="clothing">
+    <option value"">-select-</option>
+    <option value"">hat</option>
+    <option value"">jacket</option>
+    <option value"">shirt</option>
+    <option value"">sweater</option>
+    </select></td>
+      </tr>
+      <tr>
+        <th scope="row"></th>
+        <td>    <input id="mylist-electronics" type="checkbox" value= "electronics"></input>
+  <label id="mylist">shoes</label></td>
+        <td>    <select id="clothing">
+    <option value"">-select-</option>
+    <option value"">vans</option>
+    <option value"">Nike</option>
+    <option value"">Adidas</option>
+  </select></td>
+      </tr>
+
+    </tbody>
+    </table>
+</form>
+</div>
+
+<div class="shipping">
+  <form>
+    <label for="shipping">Shipping & Handling</label>
+    <br></br>
+ <input id="pickup" type="radio" value= "pickup" name"shipping"></input>
+  <label for="pickup">Pickup(free)</label>
+   <br></br>
+    <input id="standard" type="radio" value= "standard" name"shipping"></input>
+  <label for="standard-shipping">standard($2/item)</label>
+   <br></br>
+      <input id="expedited" type="radio" value= "expedited" name"shipping"></input>
+  <label for="expedited-shipping">expedited($7/item)</label>
+  <div class="notes">
+  <label for="notes">Notes:</label><br>                        
+  <textarea name="txt-notes" id="txt-notes" rows="2" placeholder="Any  comments (does not affect estimate)"></textarea>
+ </div>
+  </form>
+
+</html>
